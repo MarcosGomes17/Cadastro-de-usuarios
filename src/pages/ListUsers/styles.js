@@ -31,33 +31,53 @@ export const ContainerUsers = styled.div`
 `
 
 export const CardUsers = styled.div`
-    background-color: #252d48;
-    padding: 16px;
-    border-radius: 32px;
+  background-color: #252d48;
+  padding: 16px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 20px;
+  max-width: 380px;
+  transition: 0.3s;
+
+  &.selected {
+    border: 2px solid white;
+    background-color: #2a2d44;
+  }
+
+  div {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    max-width: 380px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    h3{
-        color: #ffffff; 
-        font-size: 24px;
-        margin-bottom: 3px;
-        text-transform: capitalize;
-    }
+  h3 {
+    color: #ffffff; 
+    font-size: 24px;
+    margin-bottom: 3px;
+    text-transform: capitalize;
+    margin-right: 20px;
+  }
 
-    p {
-        color: #ffffff;
-        font-size: 15px;
-        font-weight: 200; 
+  p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 200;
+    margin-right: 20px;
+  }
+`
 
-    }
+export const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 200px; 
 `
 
 export const TrashIcon = styled.img`
     cursor: pointer;
-    padding-left: 30px;
+    margin-right: 5px;
 
   &:hover {
     opacity: 0.8;
@@ -66,6 +86,41 @@ export const TrashIcon = styled.img`
   &:active {
     opacity: 0.5;
   }
+`
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`
+
+export const ModalContent = styled.div`
+  background-color: #2a2d44;
+  padding: 40px 30px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  gap: 5px;
+`
+
+export const ModalButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 16px;
+`
+
+export const ActionButtons = styled.div`
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 `
 
 export const AvatarUser = styled.img`
